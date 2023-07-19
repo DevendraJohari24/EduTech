@@ -4,30 +4,50 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
-  darkMode: 'class',
   theme: {
+    screens: {
+      sm: "480px",
+      md: "768px",
+      lg: "976px",
+      xl: "1440px",
+    },
     extend: {
+      keyframes: {
+        wiggle: {
+          '0%': 
+          { 
+            transform: 'translateY(0%)'
+          },
+          // '25%': {
+          //    transform: 'rotate(-3deg)' 
+          //   },
+            '50%': {
+              transform: 'translateY(50%)' 
+             },
+          '100%': {
+            transform: 'translateY(0%)'
+          }
+        }
+      },
+      animation: {
+        wiggle: 'wiggle 1s ease-in-out infinite',
+      },
+
       colors: {
-        cyan: 'hsl(180, 66%, 49%)',
-        cyanLight: 'hsl(180, 66%, 69%)',
-        darkViolet: 'hsl(257, 27%, 26%)',
-        red: 'hsl(0, 87%, 67%)',
-        grayishViolet: 'hsl(257, 7%, 63%)',
-        veryDarkBlue: 'hsl(255, 11%, 22%)',
-        veryDarkViolet: 'hsl(260, 8%, 14%) ',
+        white: "#ffffff",
+        tropaz: "#235391",
+        brightGreen: "#57cc02",
+        silver: "#bcbcbc",
       },
       fontFamily: {
-        sans: ["Josefin Sans", "sans-serif"],
+        sans: ['Asap', "sans-serif"],
         alata: ["Alata"],
       },
       letterSpacing: {
         widest: ".3em",
       },
-      spacing: {
-        180: '32rem',
-      },
     },
   },
-  plugins: []
+  plugins: [],
 }
 
