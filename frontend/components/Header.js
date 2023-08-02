@@ -9,7 +9,6 @@ const Header = () => {
     <div className="container mx-auto">
       <div className="flex flex-col lg:flex-row justify-between items-center gap-y-6 py-8">
         {/* Logo */}
-        <Link href={'/knacksack-logo.png'}>
           <Image
           src={'/knacksack-logo.png'}
           width={220}
@@ -18,7 +17,6 @@ const Header = () => {
           alt=""
           priority={true}
           />
-        </Link>
         {/* socials */}
         <Socials />
       </div>

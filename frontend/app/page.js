@@ -56,7 +56,7 @@ export default function Home() {
         <section id="feature">
           <div className="w-full h-full md:pl-28 container flex md:py-20 py-14 text-white mx-auto items-center justify-center">
               <div className="relative py-12 px-12 pl-28 md:max-w-4xl backdrop-blur-lg bg-primary/30 border border-l-0 z-0 mix-blend-color-dodge">
-              <div className="absolute -left-64 top-0 z-20  w-96 h-96 ">
+              <div className="absolute -left-64 top-0 z-20  w-96 h-96 mix-blend-color-dodge ">
                       <img src="/ai-robot-2.png" alt='' className="w-[100%] h-[100%] object-cover" />
                   </div>     
              <motion.h2 
