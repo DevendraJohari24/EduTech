@@ -1,53 +1,55 @@
 /** @type {import('tailwindcss').Config} */
-export default {
+module.exports = {
   content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
+    './pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './components/**/*.{js,ts,jsx,tsx,mdx}',
+    './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
+    container: {
+      padding: {
+        DEFAULT: '15px',
+      },
+      clipPath: {
+        mypolygon: "polygon(0 0, 39% 0, 88% 100%, 0% 100%)",
+      }
+    },
     screens: {
-      sm: "480px",
-      md: "768px",
-      lg: "976px",
-      xl: "1440px",
+      sm: '640px',
+      md: '768px',
+      lg: '960px',
+      xl: '1200px',
     },
     extend: {
-      keyframes: {
-        wiggle: {
-          '0%': 
-          { 
-            transform: 'translateY(0%)'
-          },
-          // '25%': {
-          //    transform: 'rotate(-3deg)' 
-          //   },
-            '50%': {
-              transform: 'translateY(50%)' 
-             },
-          '100%': {
-            transform: 'translateY(0%)'
-          }
-        }
+      colors: {
+        primary: '#131424',
+        secondary: '#393A47',
+        accent: '#ff4057',
+      },
+      backgroundImage: {
+        explosion: 'url("/bg-explosion.png")',
+        circles: 'url("/bg-circles.png")',
+        circleStar: 'url("/circle-star.svg")',
+        site: 'url("/site-bg.svg")',
       },
       animation: {
-        wiggle: 'wiggle 1s ease-in-out infinite',
-      },
-
-      colors: {
-        white: "#ffffff",
-        tropaz: "#235391",
-        brightGreen: "#57cc02",
-        silver: "#bcbcbc",
+        'spin-slow': 'spin 6s linear infinite',
       },
       fontFamily: {
-        sans: ['Asap', "sans-serif"],
-        alata: ["Alata"],
-      },
-      letterSpacing: {
-        widest: ".3em",
+        poppins: [`var(--font-poppins)`, 'sans-serif'],
+        sora: [`var(--font-sora)`, 'sans-serif'],
       },
     },
   },
-  plugins: [],
-}
+  container: {
+    padding: {
+      DEFAULT: '15px',
+    },
+  },
+  plugins: [
+    require('tailwind-scrollbar'),
+    require('autoprefixer'),
+    require("tailwind-clip-path"),
 
+  ],
+}
